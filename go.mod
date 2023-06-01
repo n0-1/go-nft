@@ -1,4 +1,4 @@
-module github.com/networkplumbing/go-nft
+module github.com/n0-1/go-nft
 
 go 1.16
 
