@@ -121,4 +121,10 @@ func testApplyConfigWithStatements(t *testing.T, statements ...schema.Statement)
 	config = testlib.NormalizeConfigForComparison(config)
 	newConfig = testlib.NormalizeConfigForComparison(newConfig)
 	assert.Equal(t, config.Nftables, newConfig.Nftables)
+
+	newConfig, err = nft.ApplyConfigEcho(config)
+	assert.NoError(t, err)
+
+	newConfig = testlib.NormalizeConfigForComparison(newConfig)
+	assert.Equal(t, config.Nftables, newConfig.Nftables)
 }
